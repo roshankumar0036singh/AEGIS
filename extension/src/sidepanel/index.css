@@ -1,0 +1,275 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@layer base {
+    * {
+        @apply border-aegis-border;
+    }
+
+    body {
+        @apply bg-aegis-bg text-aegis-text-primary font-sans antialiased overflow-hidden;
+    }
+
+    ::-webkit-scrollbar {
+        @apply w-1.5;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-aegis-border rounded-full hover:bg-aegis-text-muted/50 transition-colors;
+    }
+}
+
+@layer components {
+
+    /* Modern Card (Matte) */
+    .glass-card {
+        @apply bg-slate-900 border border-slate-800 rounded-lg shadow-sm;
+    }
+
+    .glass-card-hover {
+        @apply glass-card hover:border-slate-700 hover:bg-slate-800/50 transition-all duration-200;
+    }
+
+    /* Professional Buttons */
+    .btn-primary {
+        @apply inline-flex items-center justify-center bg-aegis-primary hover:bg-blue-600 text-white px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 shadow-sm hover:shadow active:scale-[0.98];
+    }
+
+    .btn-secondary {
+        @apply inline-flex items-center justify-center bg-aegis-surface border border-aegis-border hover:bg-aegis-border/50 text-aegis-text-primary px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 active:scale-[0.98];
+    }
+
+    .btn-ghost {
+        @apply inline-flex items-center justify-center px-3 py-2 rounded-lg text-sm font-medium text-aegis-text-secondary hover:text-aegis-text-primary hover:bg-aegis-surface transition-all duration-200;
+    }
+
+    .btn-icon {
+        @apply p-2 rounded-lg text-aegis-text-secondary hover:text-aegis-text-primary hover:bg-aegis-surface transition-all duration-200;
+    }
+
+    /* Input Fields */
+    .input-field {
+        @apply w-full bg-aegis-bg border border-aegis-border rounded-lg px-3 py-2 text-sm text-aegis-text-primary placeholder:text-aegis-text-muted focus:outline-none focus:border-aegis-primary focus:ring-1 focus:ring-aegis-primary/20 transition-all duration-200;
+    }
+
+    /* Professional Search Bar */
+    .search-bar-container {
+        @apply relative bg-aegis-surface border border-aegis-border rounded-xl shadow-sm transition-all duration-200 focus-within:border-aegis-primary/50 focus-within:ring-1 focus-within:ring-aegis-primary/20 focus-within:shadow-md;
+    }
+
+    .search-bar {
+        @apply w-full bg-transparent px-4 py-3 text-sm text-aegis-text-primary placeholder:text-aegis-text-muted/70 focus:outline-none resize-none leading-relaxed tracking-normal;
+        min-height: 48px;
+        max-height: 120px;
+        overflow-y: hidden;
+        scrollbar-width: none;
+    }
+
+    .search-bar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .send-button {
+        @apply absolute right-2 bottom-2 p-1.5 rounded-lg bg-aegis-primary text-white hover:bg-blue-600 active:scale-95 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+    }
+
+    /* Quick Action Pills */
+    .quick-tag {
+        @apply inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-aegis-surface border border-aegis-border text-aegis-text-secondary hover:text-aegis-primary hover:border-aegis-primary/30 hover:bg-aegis-surface/80 transition-all duration-200 whitespace-nowrap;
+    }
+
+    /* Data Boxes (Professional) */
+    .data-box {
+        @apply bg-aegis-surface border border-aegis-border rounded-lg p-4 transition-all duration-200 hover:border-aegis-border/80 hover:shadow-sm cursor-default;
+    }
+
+    .data-box-icon {
+        @apply p-2 rounded-md transition-colors duration-300;
+    }
+
+    /* Badge */
+    .badge {
+        @apply inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium uppercase tracking-wide;
+    }
+
+    .badge-primary {
+        @apply badge bg-blue-500/10 text-blue-400 border border-blue-500/20;
+    }
+
+    .badge-success {
+        @apply badge bg-emerald-500/10 text-emerald-400 border border-emerald-500/20;
+    }
+
+    .badge-warning {
+        @apply badge bg-amber-500/10 text-amber-400 border border-amber-500/20;
+    }
+
+    .badge-danger {
+        @apply badge bg-red-500/10 text-red-400 border border-red-500/20;
+    }
+
+    /* Subtle Gradient Text */
+    .gradient-text {
+        @apply text-aegis-text-primary font-semibold;
+    }
+
+    /* Message Bubbles - Clean & Professional */
+    .message-user {
+        @apply bg-aegis-primary text-white px-4 py-2.5 rounded-2xl rounded-tr-sm shadow-sm text-sm leading-relaxed;
+    }
+
+    .message-agent {
+        @apply bg-aegis-surface border border-aegis-border px-4 py-2.5 rounded-2xl rounded-tl-sm text-sm leading-relaxed shadow-sm;
+    }
+
+    .message-system {
+        @apply flex justify-center py-2 text-xs text-aegis-text-muted italic;
+    }
+
+    /* Tabs - Clean Segmented */
+    .tab-active {
+        @apply bg-aegis-bg text-aegis-text-primary shadow-sm border border-aegis-border/50 rounded-md py-1.5 flex-1 text-center text-xs font-medium transition-all;
+    }
+
+    .tab-inactive {
+        @apply text-aegis-text-muted hover:text-aegis-text-secondary py-1.5 flex-1 text-center text-xs font-medium transition-all;
+    }
+
+    /* Utilities */
+    .pulse-dot {
+        @apply w-1.5 h-1.5 rounded-full bg-aegis-primary animate-pulse;
+    }
+}
+
+@layer utilities {
+    .animate-gradient {
+        background-size: 200% 200%;
+        animation: gradient 3s ease infinite;
+    }
+
+    @keyframes gradient {
+
+        0%,
+        100% {
+            background-position: 0% 50%;
+        }
+
+        50% {
+            background-position: 100% 50%;
+        }
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.3s ease-in;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-slide-in-right {
+        animation: slideInRight 0.3s ease-out;
+    }
+
+    @keyframes slideInRight {
+        from {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .animate-scale-in {
+        animation: scaleIn 0.2s ease-out;
+    }
+
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .mask-linear-fade {
+        mask-image: linear-gradient(to right, black 90%, transparent 100%);
+    }
+}
+
+/* Custom Animations */
+@keyframes typing {
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.typing-indicator span {
+    animation: typing 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+.shimmer {
+    animation: shimmer 2s infinite;
+    background: linear-gradient(to right,
+            transparent 0%,
+            rgba(59, 130, 246, 0.1) 50%,
+            transparent 100%);
+    background-size: 1000px 100%;
+}
